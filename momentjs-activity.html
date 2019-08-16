@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+
+<head>
+
+  <meta charset="UTF-8">
+  <title>Moment JS Exercises</title>
+
+</head>
+
+<body>
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery.js"></script>
+
+  <!-- Link to Moment.js should go here -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.js" type="text/javascript"></script>
+
+  <script>
+    var randomDate = "02/23/1999";
+    var nowMoment = moment();
+
+    // Using scripts from moment.js write code below to complete each of the following.
+    // Console.log to confirm the code changes we made worked.
+    
+    // 1 ...to convert the randomDate into three other date formats
+    console.log("-----------------------------------------------------------")
+    console.log("It is currently: " + nowMoment.format("dddd MMM do YYYY HH:MM:SS"));
+    console.log("This is one format: " + moment(randomDate).format("dddd MMM DD YYYY"));
+    console.log("This is a second format: " + moment(randomDate).format("MM-DD-YYYY"));
+    console.log("This is yet another format: " + moment(randomDate).format("MMMM Do Y"));
+
+    // 2 ...to determine the time in years, months, days between today and the randomDate
+    console.log("-----------------------------------------------------------")
+    var timeDiff = ((moment() - moment(randomDate)));
+    var daysDiff = nowMoment.format("D") - moment(randomDate).format("D");
+    var yearsDiff = nowMoment.format("YYYY") - moment(randomDate).format("YYYY"); 
+    var monthsDiff = nowMoment.format("M") - moment(randomDate).format("M");
+    console.log("Days between now and 02/23/1999 is: " + daysDiff + ".");
+    console.log("Months between now and 02/23/1999 is: " + monthsDiff + ".");
+    console.log("Years between now and 02/23/1999 is: " + yearsDiff + ".");
+    console.log("This is the raw time difference: " + timeDiff);
+    console.log("Moment (timeDiff) formatted with MM DD YYYY is: " + moment(timeDiff).format("MM DD YYYY"));
+    console.log(moment(randomDate).toNow());
+    // 3 ...to determine the number of days between the randomDate and 02/14/2001
+    var a = moment("randomDate");
+    var b = moment([2019, 08, 15]);
+    console.log("From 02/23/1999 to now is " + (a.diff(b, 'days')));
+    // 4 ...to convert the randomDate to unix time (be sure to look up what unix time even is!!!)
+    console.log("Unix time for 02/23/1999 is : " + moment(randomDate).format("x")) + ".";
+    console.log("Unix time for this current date is : " + moment().format("x") + ".");
+    // 5 ...to determine what day of the week and what week of the year this randomDate falls on.
+    console.log("-----------------------------------------------------------")
+    console.log("This day is : " + moment(randomDate).format("dddd") + " and it is the " + moment(randomDate).format("wo") + " week of the year.")
+    // If you finish early...
+    
+    // Start creating HTML inputs and then redisplay the dates using moment.js elsewhere on the page.
+  </script>
+
+</body>
+
+</html>
